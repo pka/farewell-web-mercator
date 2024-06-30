@@ -42,8 +42,222 @@
   <p class="date">State of the Map Europe 2024 Łódź</p>
 </section>
 
-<section class="slide level6">
+<section id="about-me" class="slide level1">
+<h1>About me</h1>
+<div class="fragment">
+<p>Lazy mapper</p>
+</div>
+<div class="fragment">
+<p>FOSSGIS e.V. board (German OSM chapter)</p>
+</div>
+<div class="fragment">
+<p>GIS developer</p>
+<ul>
+<li>Sourcepole, Switzerland</li>
+<li>t-rex tile server -&gt; BBOX</li>
+</ul>
+</div>
+</section>
+<section id="web-mercator" class="slide level1">
+<h1>Web Mercator</h1>
+</section>
+<section id="section" class="slide level1">
+<h1></h1>
+<p><img data-src="images/webmercator-osm-membership.png" /></p>
+<aside class="notes">
+<p>Africa actually has 14 times as much area as Greenland</p>
+</aside>
+</section>
+<section id="section-1" class="slide level1">
+<h1></h1>
+<p><img data-src="images/xkcd-greenland_size.png" /></p>
+<p><a href="https://xkcd.com/2911" class="uri">https://xkcd.com/2911</a></p>
+<aside class="notes">
+<p><a href="https://www.explainxkcd.com/wiki/index.php/2911:_Greenland_Size" class="uri">https://www.explainxkcd.com/wiki/index.php/2911:_Greenland_Size</a></p>
+</aside>
+<!-- 
+# 
 
+![](images/webmercator-airports.png)
+
+# 
+
+![](images/webmercator-aws.png)
+
+# 
+
+![](images/webmercator-kosmos.jpg)
+
+# 
+
+![](images/webmercator-osm-women.png)
+ -->
+</section>
+<section id="section-2" class="slide level1">
+<h1></h1>
+<p><img data-src="images/xkcd-bad_map_projection_the_greenland_special.png" /></p>
+</section>
+<section id="mercator-projection" class="slide level1">
+<h1>Mercator projection</h1>
+<p><img data-src="images/mercator-portriat.png" /></p>
+<ul>
+<li>Conformal cylindrical map projection</li>
+<li>Good for navigation</li>
+<li>Gerardus Mercator, 1596</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>north everywhere “up” and south “down”, while preserving local directions and shapes</li>
+<li>1512 (Flanders) - 1594 (Duisburg) <a href="https://en.wikipedia.org/wiki/Gerardus_Mercator" class="uri">https://en.wikipedia.org/wiki/Gerardus_Mercator</a></li>
+</ul>
+</aside>
+</section>
+<section id="web-mercator-1" class="slide level1">
+<h1>Web Mercator</h1>
+<ul>
+<li>Mercator projection cropped to around 85°N to 85°S -&gt; square, good for tiling</li>
+<li>Spherical and ellipsoidal mix of formulas</li>
+</ul>
+<aside class="notes">
+<p>The value 85.051129° is the latitude at which the full projected map becomes a square</p>
+</aside>
+</section>
+<section id="alternatives" class="slide level1">
+<h1>Alternatives</h1>
+</section>
+<section id="section-3" class="slide level1">
+<h1></h1>
+<p><img data-src="images/ortelius-1572.jpg" /></p>
+<p>Theatrum Orbis Terrarum, 1572</p>
+<aside class="notes">
+<p>Cartographer Abraham Ortelius issues Theatrum Orbis Terrarum, the first modern atlas.</p>
+<p>Three Latin editions of this (besides a Dutch, a French and a German edition) appeared before the end of 1572; 25 editions came out before Ortelius’ death in 1598; and several others were published subsequently, for the atlas continued to be in demand till about 1612. It is often considered as the official beginning of the Golden Age of Netherlandish cartography (~1570s–1670s).</p>
+</aside>
+</section>
+<section id="section-4" class="slide level1">
+<h1></h1>
+<p><img data-src="images/xkcd-map_projections.png" /></p>
+</section>
+<section id="section-5" class="slide level1">
+<h1></h1>
+<p><img data-src="images/tweet-gmaps-globe-2018.png" /></p>
+<aside class="notes">
+<p>2018</p>
+</aside>
+</section>
+<section id="section-6" class="slide level1">
+<h1></h1>
+<p><img data-src="images/mastodon-benschmidt-gmaps.png" /></p>
+</section>
+<section id="section-7" class="slide level1">
+<h1></h1>
+<p><img data-src="images/equal-earth-etopo1.jpg" /></p>
+</section>
+<section id="equal-earth-map-projection" class="slide level1">
+<h1>Equal Earth map projection</h1>
+<p>Bojan Šavrič, Tom Patterson, Bernhard Jenny, 2018</p>
+<p><a href="https://www.equal-earth.com/" class="uri">https://www.equal-earth.com/</a></p>
+</section>
+<section id="equal-earth-greenwich" class="slide level1">
+<h1>Equal Earth Greenwich</h1>
+<p><img data-src="images/Equal-Earth-Map-0.jpg" /></p>
+<p>EPSG:8857</p>
+</section>
+<section id="equal-earth-americas" class="slide level1">
+<h1>Equal Earth Americas</h1>
+<p><img data-src="images/Equal-Earth-Map-90W.jpg" /></p>
+<p>EPSG:8858</p>
+</section>
+<section id="equal-earth-asia-pacific" class="slide level1">
+<h1>Equal Earth Asia-Pacific</h1>
+<p><img data-src="images/Equal-Earth-Map-150E.jpg" /></p>
+<p>EPSG:8859</p>
+</section>
+<section id="equal-earth-florence" class="slide level1">
+<h1>Equal Earth Florence</h1>
+<p><img data-src="images/Equal-Earth-Map-11E.jpg" /></p>
+<p>Florence Meridian 11E</p>
+</section>
+<section id="support" class="slide level1">
+<h1>Support</h1>
+<ul>
+<li>PROJ -&gt; Desktop GIS</li>
+<li>D3, Plotly, R, …</li>
+<li>proj4</li>
+</ul>
+</section>
+<section id="web-mapping" class="slide level1">
+<h1>Web mapping</h1>
+<p>Equal Earth already in widespread use by cartographers</p>
+<p>Limitations:</p>
+<ul>
+<li>Limited zooming<br />
+</li>
+<li>Variable center meridian</li>
+<li>Tile caching</li>
+</ul>
+</section>
+<section id="tile-grid" class="slide level1">
+<h1>Tile grid</h1>
+<p><img data-src="images/grid-unscaled.jpg" /></p>
+<aside class="notes">
+<p>A quadratic grid for Equal Earth centered on Greenwich is similar to a Web Mercator grid. Instead of Mercator grid corners at (-20’037’508, 20’037’508) and (20’037’508, -20’037’508) the grid corners of Equal Earth Greenwich are at (-17’243’959, 17’243’959) and (17’243’959, -17’243’959)</p>
+</aside>
+</section>
+<section id="scaled-grid" class="slide level1">
+<h1>Scaled grid</h1>
+<p><img data-src="images/grid-scaled.jpg" /></p>
+<aside class="notes">
+<p>scale factor of 1.162. Conversions between geographic WGS84 coordinates and the map coordinate reference system give wrong results without adapted calculations. But maps can be displayed without any coordinate projection calculations.</p>
+</aside>
+</section>
+<section id="maplibre" class="slide level1">
+<h1>MapLibre</h1>
+<p><a href="https://equal.bbox.earth/maplibre/" class="uri">https://equal.bbox.earth/maplibre/</a></p>
+<p>Web Mercator grid</p>
+</section>
+<section id="openlayers" class="slide level1">
+<h1>OpenLayers</h1>
+<p><a href="https://equal.bbox.earth/ol-asia-pacific/" class="uri">https://equal.bbox.earth/ol-asia-pacific/</a></p>
+<p>Equal Earth Asia-Pacific, Web Mercator grid</p>
+</section>
+<section id="deckgl" class="slide level1">
+<h1>DeckGL</h1>
+<p><a href="https://equal.bbox.earth/deckgl/" class="uri">https://equal.bbox.earth/deckgl/</a></p>
+<p>MapLibre map with DeckGL layer using Web Mercator tile grid.</p>
+</section>
+<section id="more-usage-examples" class="slide level1">
+<h1>More usage examples</h1>
+<p><a href="https://equal.bbox.earth/" class="uri">https://equal.bbox.earth/</a></p>
+</section>
+<section id="combined-projections" class="slide level1">
+<h1>Combined projections</h1>
+<p><a href="https://equal.bbox.earth/maplibre-eq2merc/" class="uri">https://equal.bbox.earth/maplibre-eq2merc/</a></p>
+<p>Equal Earth tiles at z0-z2 and Web Mercator tiles at z &gt; 2.</p>
+</section>
+<section id="possible-improvements" class="slide level1">
+<h1>Possible improvements</h1>
+</section>
+<section id="animated-transition-z2---z3" class="slide level1">
+<h1>Animated transition z2 -&gt; z3</h1>
+<p><a href="https://kvaleya.gitlab.io/maplibre/globe/globedemo.html" class="uri">https://kvaleya.gitlab.io/maplibre/globe/globedemo.html</a></p>
+</section>
+<section id="dynamic-center-meridian" class="slide level1">
+<h1>Dynamic center meridian</h1>
+<figure>
+<img data-src="images/equal-earth-rotation.gif" alt="" /><figcaption>rotating</figcaption>
+</figure>
+<p><a href="https://observablehq.com/d/ece4d307c72c1312" class="uri">https://observablehq.com/d/ece4d307c72c1312</a></p>
+<p>Reprojecting WGS-84-Tiles?</p>
+</section>
+<section id="summary" class="slide level1">
+<h1>Summary</h1>
+<p>Say farewell to Web Mercator (on world scale) and use Equal Earth instead!</p>
+</section>
+<section id="thank-you" class="slide level1">
+<h1>Thank you</h1>
+<p>Pirmin Kalberer</p>
+<p><a href="https://mapstodon.space/@implgeo" class="uri">https://mapstodon.space/@implgeo</a></p>
 </section>
     </div>
   </div>
