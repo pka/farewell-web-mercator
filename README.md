@@ -9,7 +9,7 @@ Create HTML:
 
         make
 
-        open docs/index.html
+        xdg-open docs/index.html
 
 Local:
 

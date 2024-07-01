@@ -1,12 +1,16 @@
 % Farewell Web Mercator
 % Pirmin Kalberer @implgeo
 % State of the Map Europe 2024 Łódź
+---
+width: 1600
+height: 900
+---
 
 # About me
 
 . . .
 
-Lazy mapper
+Lazy mapper (55 changesets in 15 years)
 
 . . .
 
@@ -21,7 +25,7 @@ GIS developer
 
 # Web Mercator
 
-#
+##
 
 ![](images/webmercator-osm-membership.png)
 
@@ -31,7 +35,7 @@ Africa actually has 14 times as much area as Greenland
 
 :::
 
-# 
+##
 
 ![](images/xkcd-greenland_size.png)
 
@@ -60,18 +64,18 @@ Africa actually has 14 times as much area as Greenland
 
 ![](images/webmercator-osm-women.png)
  -->
-# 
+##
 
 ![](images/xkcd-bad_map_projection_the_greenland_special.png)
 
 
 # Mercator projection
 
-![](images/mercator-portriat.png)
+![](images/mercator-portrait.jpg)
 
+* Gerardus Mercator, 1596
 * Conformal cylindrical map projection
 * Good for navigation
-* Gerardus Mercator, 1596
 
 ::: notes
 * north everywhere "up" and south "down", while preserving local directions and shapes
@@ -79,7 +83,7 @@ Africa actually has 14 times as much area as Greenland
 <https://en.wikipedia.org/wiki/Gerardus_Mercator>
 :::
 
-# Web Mercator
+## Web Mercator
 
 * Mercator projection cropped to around 85°N to 85°S
   -> square, good for tiling
@@ -91,7 +95,7 @@ The value 85.051129° is the latitude at which the full projected map becomes a 
 
 # Alternatives
 
-# 
+##
 
 ![](images/ortelius-1572.jpg)
 
@@ -103,11 +107,11 @@ Cartographer Abraham Ortelius issues Theatrum Orbis Terrarum, the first modern a
 Three Latin editions of this (besides a Dutch, a French and a German edition) appeared before the end of 1572; 25 editions came out before Ortelius' death in 1598; and several others were published subsequently, for the atlas continued to be in demand till about 1612. It is often considered as the official beginning of the Golden Age of Netherlandish cartography (~1570s–1670s).
 :::
 
-# 
+##
 
 ![](images/xkcd-map_projections.png)
 
-# 
+##
 
 ![](images/tweet-gmaps-globe-2018.png)
 
@@ -117,11 +121,11 @@ Three Latin editions of this (besides a Dutch, a French and a German edition) ap
 
 :::
 
-# 
+##
 
 ![](images/mastodon-benschmidt-gmaps.png)
 
-#
+##
 
 ![](images/equal-earth-etopo1.jpg)
 
@@ -131,31 +135,31 @@ Bojan Šavrič, Tom Patterson, Bernhard Jenny, 2018
 
 <https://www.equal-earth.com/>
 
-# Equal Earth Greenwich
+## Equal Earth Greenwich
 
 ![](images/Equal-Earth-Map-0.jpg)
 
 EPSG:8857
 
-# Equal Earth Americas
+## Equal Earth Americas
 
 ![](images/Equal-Earth-Map-90W.jpg)
 
 EPSG:8858
 
-# Equal Earth Asia-Pacific
+## Equal Earth Asia-Pacific
 
 ![](images/Equal-Earth-Map-150E.jpg)
 
 EPSG:8859
 
-# Equal Earth Florence
+## Equal Earth Florence
 
 ![](images/Equal-Earth-Map-11E.jpg)
 
 Florence Meridian 11E
 
-# Support
+## Support
 
 * PROJ -> Desktop GIS
 * D3, Plotly, R, ... 
@@ -163,8 +167,10 @@ Florence Meridian 11E
 
 # Web mapping
 
-Equal Earth already in widespread use
+Equal Earth already in use
 by cartographers
+
+. . .
 
 Limitations:
 
@@ -172,17 +178,17 @@ Limitations:
 * Variable center meridian
 * Tile caching
 
-# Tile grid
+## Tile grid
 
 ![](images/grid-unscaled.jpg)
 
 ::: notes
 A quadratic grid for Equal Earth centered on Greenwich is similar to a Web Mercator grid.
-Instead of Mercator grid corners at (-20'037'508, 20'037'508) and (20'037'508, -20'037'508)
-the grid corners of Equal Earth Greenwich are at (-17'243'959, 17'243'959) and (17'243'959, -17'243'959)
+Instead of Mercator grid corners at +/-20'037'508 the grid corners of Equal Earth 
+Greenwich are at +/-17'243'959
 :::
 
-# Scaled grid
+## Scaled grid
 
 ![](images/grid-scaled.jpg)
 
@@ -192,29 +198,25 @@ system give wrong results without adapted calculations.
 But maps can be displayed without any coordinate projection calculations.
 :::
 
-# MapLibre
+## MapLibre
 
 <https://equal.bbox.earth/maplibre/>
 
 Web Mercator grid
 
-# OpenLayers
+## OpenLayers
 
 <https://equal.bbox.earth/ol-asia-pacific/>
 
 Equal Earth Asia-Pacific, Web Mercator grid
 
-# DeckGL
+## DeckGL
 
 <https://equal.bbox.earth/deckgl/>
 
 MapLibre map with DeckGL layer using Web Mercator tile grid.
 
-# More usage examples
-
-<https://equal.bbox.earth/>
-
-# Combined projections
+## Combined projections
 
 <https://equal.bbox.earth/maplibre-eq2merc/>
 
@@ -222,23 +224,25 @@ Equal Earth tiles at z0-z2 and Web Mercator tiles at z > 2.
 
 # Possible improvements
 
-# Animated transition z2 -> z3
+## Animated transition z2 -> z3
 
   <https://kvaleya.gitlab.io/maplibre/globe/globedemo.html>
 
-# Dynamic center meridian
+## Dynamic center meridian
 
-![rotating](images/equal-earth-rotation.gif)
+![](images/equal-earth-rotation.gif)
 
 <https://observablehq.com/d/ece4d307c72c1312>
 
-Reprojecting WGS-84-Tiles?
+Reproject WGS-84-Tiles?
 
 # Summary
 
 Say farewell to Web Mercator
+
 (on world scale)
-and use Equal Earth instead!
+
+and use Equal Earth instead.
 
 # Thank you
 
