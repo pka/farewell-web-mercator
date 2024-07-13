@@ -62,39 +62,26 @@ data-cites="implgeo">@implgeo</span></p>
 </section>
 
 <section>
-<section id="web-mercator-in-the-wild" class="title-slide slide level1">
-<h1>Web Mercator in the wild</h1>
+<section id="web-mercator---the-bad-parts"
+class="title-slide slide level1">
+<h1>Web Mercator - the bad parts</h1>
 
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p><img data-src="images/webmercator-osm-membership.png" /></p>
-<aside class="notes">
-<p>Bad for thematic mapping</p>
-</aside>
+<section id="size-distortion" class="slide level2">
+<h2>Size distortion</h2>
+<p><img data-src="images/mercator-size-distortion-animated.gif" /></p>
+<p>Africa actually has 14 times as much area as Greenland</p>
 </section>
-<section id="section-1" class="slide level2">
-<h2></h2>
+<section id="thematic-mapping" class="slide level2">
+<h2>Thematic mapping</h2>
+<p><img data-src="images/webmercator-osm-membership.png" /></p>
+</section>
+<section id="in-the-wild" class="slide level2">
+<h2>In the wild</h2>
 <p><img data-src="images/webmercator-relief.jpg" /></p>
 <aside class="notes">
-<p>Africa actually has 14 times as much area as Greenland</p>
+<p>On T-shirts, posters and even in school rooms</p>
 </aside>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<p><img data-src="images/xkcd-greenland_size.png" /></p>
-<p><a href="https://xkcd.com/2911"
-class="uri">https://xkcd.com/2911</a></p>
-<aside class="notes">
-<p><a
-href="https://www.explainxkcd.com/wiki/index.php/2911:_Greenland_Size"
-class="uri">https://www.explainxkcd.com/wiki/index.php/2911:_Greenland_Size</a></p>
-</aside>
-</section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<p><img
-data-src="images/xkcd-bad_map_projection_the_greenland_special.png" /></p>
 </section></section>
 <section>
 <section id="mercator-projection" class="title-slide slide level1">
@@ -118,8 +105,8 @@ class="uri">https://en.wikipedia.org/wiki/Gerardus_Mercator</a></li>
 <section id="web-mercator" class="slide level2">
 <h2>Web Mercator</h2>
 <ul>
-<li>Mercator projection cropped to around 85°N to 85°S -&gt; square,
-good for tiling</li>
+<li>Mercator projection cropped to ~85°N to 85°S -&gt; square, good for
+tiling</li>
 <li>Spherical and ellipsoidal mix of formulas</li>
 </ul>
 <aside class="notes">
@@ -132,7 +119,7 @@ becomes a square</p>
 <h1>Alternatives</h1>
 
 </section>
-<section id="section-4" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <p><img data-src="images/ortelius-1572.jpg" /></p>
 <p>Theatrum Orbis Terrarum, 1572</p>
@@ -147,22 +134,25 @@ considered as the official beginning of the Golden Age of Netherlandish
 cartography (~1570s–1670s).</p>
 </aside>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <p><img data-src="images/xkcd-map_projections.png" /></p>
+<aside class="notes">
+<p>XKCD</p>
+</aside>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <p><img data-src="images/tweet-gmaps-globe-2018.png" /></p>
 <aside class="notes">
 <p>2018</p>
 </aside>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <p><img data-src="images/mastodon-benschmidt-gmaps.png" /></p>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <p><img data-src="images/equal-earth-etopo1.jpg" /></p>
 </section></section>
@@ -173,6 +163,10 @@ class="title-slide slide level1">
 <p>Bojan Šavrič, Tom Patterson, Bernhard Jenny, 2018</p>
 <p><a href="https://www.equal-earth.com/"
 class="uri">https://www.equal-earth.com/</a></p>
+<aside class="notes">
+<p>Inspired by the Robinson projection, retains the relative size of
+areas.</p>
+</aside>
 </section>
 <section id="equal-earth-greenwich" class="slide level2">
 <h2>Equal Earth Greenwich</h2>
@@ -197,9 +191,9 @@ class="uri">https://www.equal-earth.com/</a></p>
 <section id="support" class="slide level2">
 <h2>Support</h2>
 <ul>
-<li>PROJ -&gt; Desktop GIS</li>
-<li>D3, Plotly, R, …</li>
-<li>proj4</li>
+<li>PROJ -&gt; GDAL, Desktop GIS, R</li>
+<li>D3, Plotly</li>
+<li>proj4js</li>
 </ul>
 </section></section>
 <section>
@@ -211,7 +205,7 @@ class="uri">https://www.equal-earth.com/</a></p>
 <ul>
 <li>Limited zooming<br />
 </li>
-<li>Variable center meridian</li>
+<li>Static center meridian</li>
 <li>Tile caching</li>
 </ul>
 </div>
