@@ -23,16 +23,22 @@ GIS developer
 * Sourcepole, Switzerland
 * t-rex tile server -> BBOX
 
-# Web Mercator
+# Web Mercator in the wild
 
 ##
 
 ![](images/webmercator-osm-membership.png)
 
 ::: notes
+Bad for thematic mapping
+:::
 
+##
+
+![](images/webmercator-relief.jpg)
+
+::: notes
 Africa actually has 14 times as much area as Greenland
-
 :::
 
 ##
@@ -42,28 +48,9 @@ Africa actually has 14 times as much area as Greenland
 <https://xkcd.com/2911>
 
 ::: notes
-
 <https://www.explainxkcd.com/wiki/index.php/2911:_Greenland_Size>
-
 :::
 
-<!-- 
-# 
-
-![](images/webmercator-airports.png)
-
-# 
-
-![](images/webmercator-aws.png)
-
-# 
-
-![](images/webmercator-kosmos.jpg)
-
-# 
-
-![](images/webmercator-osm-women.png)
- -->
 ##
 
 ![](images/xkcd-bad_map_projection_the_greenland_special.png)
@@ -216,11 +203,17 @@ Equal Earth Asia-Pacific, Web Mercator grid
 
 MapLibre map with DeckGL layer using Web Mercator tile grid.
 
-## Combined projections
+## Proposal: Combined projections
 
 <https://equal.bbox.earth/maplibre-eq2merc/>
 
-Equal Earth tiles at z0-z2 and Web Mercator tiles at z > 2.
+Equal Earth tiles at z0-z2 and Web Mercator tiles with z >= 3.
+
+## OSM basemap with combined projections
+
+<https://maps.bbox.earth/>
+
+MapLibre with Shortbread PMTiles.
 
 # Possible improvements
 
@@ -235,6 +228,13 @@ Equal Earth tiles at z0-z2 and Web Mercator tiles at z > 2.
 <https://observablehq.com/d/ece4d307c72c1312>
 
 Reproject WGS-84-Tiles?
+
+## Coordinate transformation
+
+Plugins for MapLibre, OpenLayers, etc.
+with coordinate transformation functions.
+
+Adapted zoom functions between z < 3 and z >= 3.
 
 # Summary
 
