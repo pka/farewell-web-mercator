@@ -23,37 +23,25 @@ GIS developer
 * Sourcepole, Switzerland
 * t-rex tile server -> BBOX
 
-# Web Mercator in the wild
+# Web Mercator - the bad parts
 
-##
+## Size distortion
+
+![](images/mercator-size-distortion-animated.gif)
+
+Africa actually has 14 times as much area as Greenland
+
+## Thematic mapping
 
 ![](images/webmercator-osm-membership.png)
 
-::: notes
-Bad for thematic mapping
-:::
-
-##
+## In the wild
 
 ![](images/webmercator-relief.jpg)
 
 ::: notes
-Africa actually has 14 times as much area as Greenland
+On T-shirts, posters and even in school rooms
 :::
-
-##
-
-![](images/xkcd-greenland_size.png)
-
-<https://xkcd.com/2911>
-
-::: notes
-<https://www.explainxkcd.com/wiki/index.php/2911:_Greenland_Size>
-:::
-
-##
-
-![](images/xkcd-bad_map_projection_the_greenland_special.png)
 
 
 # Mercator projection
@@ -72,7 +60,7 @@ Africa actually has 14 times as much area as Greenland
 
 ## Web Mercator
 
-* Mercator projection cropped to around 85°N to 85°S
+* Mercator projection cropped to ~85°N to 85°S
   -> square, good for tiling
 * Spherical and ellipsoidal mix of formulas
 
@@ -98,14 +86,16 @@ Three Latin editions of this (besides a Dutch, a French and a German edition) ap
 
 ![](images/xkcd-map_projections.png)
 
+::: notes
+XKCD
+:::
+
 ##
 
 ![](images/tweet-gmaps-globe-2018.png)
 
 ::: notes
-
 2018
-
 :::
 
 ##
@@ -121,6 +111,10 @@ Three Latin editions of this (besides a Dutch, a French and a German edition) ap
 Bojan Šavrič, Tom Patterson, Bernhard Jenny, 2018
 
 <https://www.equal-earth.com/>
+
+::: notes
+Inspired by the Robinson projection, retains the relative size of areas.
+:::
 
 ## Equal Earth Greenwich
 
@@ -148,9 +142,9 @@ Florence Meridian 11E
 
 ## Support
 
-* PROJ -> Desktop GIS
-* D3, Plotly, R, ... 
-* proj4
+* PROJ -> GDAL, Desktop GIS, R
+* D3, Plotly
+* proj4js
 
 # Web mapping
 
@@ -162,7 +156,7 @@ by cartographers
 Limitations:
 
 * Limited zooming  
-* Variable center meridian
+* Static center meridian
 * Tile caching
 
 ## Tile grid
