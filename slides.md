@@ -181,11 +181,15 @@ But maps can be displayed without any coordinate projection calculations.
 
 ## MapLibre
 
+![](images/Equal-Earth-Maplibre.jpg)
+
 <https://equal.bbox.earth/maplibre/>
 
 Web Mercator grid
 
 ## OpenLayers
+
+![](images/Equal-Earth-OL.jpg)
 
 <https://equal.bbox.earth/ol-asia-pacific/>
 
@@ -193,17 +197,24 @@ Equal Earth Asia-Pacific, Web Mercator grid
 
 ## DeckGL
 
+![](images/Equal-Earth-DeckGL.jpg)
+
 <https://equal.bbox.earth/deckgl/>
 
 MapLibre map with DeckGL layer using Web Mercator tile grid.
 
 ## Proposal: Combined projections
 
+![](images/Equal-Earth-Maplibre.jpg)
+![](images/NE-combined-Merc.jpg)
+
 <https://equal.bbox.earth/maplibre-eq2merc/>
 
 Equal Earth tiles at z0-z2 and Web Mercator tiles with z >= 3.
 
 ## OSM basemap with combined projections
+
+![](images/Equal-Earth-bbox.jpg)
 
 <https://maps.bbox.earth/>
 
@@ -212,6 +223,8 @@ MapLibre with Shortbread PMTiles.
 # Possible improvements
 
 ## Animated transition z2 -> z3
+
+![](images/proj-transition.gif)
 
   <https://kvaleya.gitlab.io/maplibre/globe/globedemo.html>
 
