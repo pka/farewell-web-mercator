@@ -260,3 +260,5 @@ and use Equal Earth instead.
 Pirmin Kalberer
 
 <https://mapstodon.space/@implgeo>
+
+[equal.bbox.earth](https://equal.bbox.earth)
