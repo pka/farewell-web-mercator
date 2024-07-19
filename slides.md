@@ -31,6 +31,10 @@ GIS developer
 
 Africa actually has 14 times as much area as Greenland
 
+::: notes
+Image credit: https://en.wikipedia.org/wiki/Mercator_projection
+:::
+
 ## Thematic mapping
 
 ![](images/webmercator-osm-membership.png)
@@ -142,7 +146,7 @@ Florence Meridian 11E
 
 ## Support
 
-* PROJ -> GDAL, Desktop GIS, R
+* PROJ -> GDAL, QGIS, R
 * D3, Plotly
 * proj4js
 
