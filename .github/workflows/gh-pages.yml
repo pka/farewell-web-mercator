@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - main 
+      - main
   pull_request:
 
 permissions:
@@ -17,6 +17,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install just
+        uses: taiki-e/install-action@v2
+        with: { tool: just }
+
       - name: Install pandoc
         run: |
           #sudo apt update
@@ -27,7 +31,7 @@ jobs:
           pandoc --version
 
       - name: Build
-        run: make
+        run: just html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
