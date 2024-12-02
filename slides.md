@@ -1,6 +1,6 @@
 % Farewell Web Mercator
 % Pirmin Kalberer @implgeo
-% State of the Map Europe 2024 Łódź
+% FOSS4G 2024 Belém
 ---
 width: 1600
 height: 900
@@ -159,7 +159,7 @@ by cartographers
 
 Limitations:
 
-* Limited zooming  
+* Limited zooming
 * Static center meridian
 * Tile caching
 
@@ -169,7 +169,7 @@ Limitations:
 
 ::: notes
 A quadratic grid for Equal Earth centered on Greenwich is similar to a Web Mercator grid.
-Instead of Mercator grid corners at +/-20'037'508 the grid corners of Equal Earth 
+Instead of Mercator grid corners at +/-20'037'508 the grid corners of Equal Earth
 Greenwich are at +/-17'243'959
 :::
 
@@ -178,7 +178,7 @@ Greenwich are at +/-17'243'959
 ![](images/grid-scaled.jpg)
 
 ::: notes
-scale factor of 1.162. Conversions between geographic WGS84 coordinates and the map coordinate reference 
+scale factor of 1.162. Conversions between geographic WGS84 coordinates and the map coordinate reference
 system give wrong results without adapted calculations.
 But maps can be displayed without any coordinate projection calculations.
 :::
@@ -199,13 +199,13 @@ Web Mercator grid
 
 Equal Earth Asia-Pacific, Web Mercator grid
 
-## DeckGL
+## deck.gl
 
 ![](images/Equal-Earth-DeckGL.jpg)
 
 <https://equal.bbox.earth/deckgl/>
 
-MapLibre map with DeckGL layer using Web Mercator tile grid.
+MapLibre map with deck.gl layer using Web Mercator tile grid.
 
 ## Proposal: Combined projections
 

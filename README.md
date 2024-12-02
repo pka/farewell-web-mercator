@@ -1,6 +1,7 @@
 # Farewell Web Mercator
 
-State of the Map Europe 2024 Łódź
+* State of the Map Europe 2024 Łódź
+* FOSS4G 2024 Belém
 
 
 HTML is generated with [pandoc](https://pandoc.org/MANUAL.html#slide-shows) in [reveal.js](https://revealjs.com/) format.
