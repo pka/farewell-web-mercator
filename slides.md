@@ -8,20 +8,20 @@ height: 900
 
 # About me
 
-. . .
+GIS developer @ Sourcepole, Switzerland
 
+Web GIS, QGIS and other OSGeo projects
+
+t-rex tile server -> BBOX server
+
+::: notes
+OSM:
+. . .
 Lazy mapper (55 changesets in 15 years)
-
 . . .
-
 FOSSGIS e.V. board (German OSM chapter)
-
 . . .
-
-GIS developer
-
-* Sourcepole, Switzerland
-* t-rex tile server -> BBOX
+:::
 
 # Web Mercator - the bad parts
 
@@ -41,10 +41,11 @@ Image credit: https://en.wikipedia.org/wiki/Mercator_projection
 
 ## In the wild
 
-![](images/webmercator-relief.jpg)
+![](images/webmercator-skynews.jpg)
 
 ::: notes
 On T-shirts, posters and even in school rooms
+Image credit: https://mapstodon.space/@luis_de_sousa@mastodon.social/113540237357844184
 :::
 
 
@@ -52,7 +53,7 @@ On T-shirts, posters and even in school rooms
 
 ![](images/mercator-portrait.jpg)
 
-* Gerardus Mercator, 1596
+* Gerardus Mercator, 1569
 * Conformal cylindrical map projection
 * Good for navigation
 
@@ -247,18 +248,26 @@ with coordinate transformation functions.
 
 Adapted zoom functions between z < 3 and z >= 3.
 
+Done for MapLibre: [github.com/pka/maplibre-gl-equal-earth](https://github.com/pka/maplibre-gl-equal-earth)
+
 # Summary
 
 Say farewell to Web Mercator
 
-(on world scale)
+(for world maps)
 
 and use Equal Earth instead.
+
+::: notes
+- Cartographic crime
+- For South Americans: it's a sin
+- From now on, consider it officially forbidden
+:::
 
 # Thank you
 
 Pirmin Kalberer
 
-<https://mapstodon.space/@implgeo>
+[mapstodon.space/@implgeo](https://mapstodon.space/@implgeo)
 
 [equal.bbox.earth](https://equal.bbox.earth)
