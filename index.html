@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Pirmin Kalberer @implgeo">
-  <title>Farewell Web Mercator</title>
+  <title>Lebewohl Web Mercator</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -38,17 +38,17 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Farewell Web Mercator</h1>
+  <h1 class="title">Lebewohl Web Mercator</h1>
   <p class="author">Pirmin Kalberer <span class="citation"
 data-cites="implgeo">@implgeo</span></p>
-  <p class="date">FOSS4G 2024 Belém</p>
+  <p class="date">FOSSGIS 2025 Münster</p>
 </section>
 
-<section id="about-me" class="title-slide slide level1">
-<h1>About me</h1>
-<p>GIS developer @ Sourcepole, Switzerland</p>
-<p>Web GIS, QGIS and other OSGeo projects</p>
-<p>t-rex tile server -&gt; BBOX server</p>
+<section id="über-mich" class="title-slide slide level1">
+<h1>Über mich</h1>
+<p>GIS-Entwickler @ Sourcepole, Schweiz</p>
+<p>Web GIS, QGIS und andere OSGeo-Projekte</p>
+<p>t-rex Tile-Server -&gt; BBOX-Server</p>
 <aside class="notes">
 <p>OSM: . . . Lazy mapper (55 changesets in 15 years) . . . FOSSGIS e.V.
 board (German OSM chapter) . . .</p>
@@ -58,23 +58,27 @@ board (German OSM chapter) . . .</p>
 <section>
 <section id="web-mercator---the-bad-parts"
 class="title-slide slide level1">
-<h1>Web Mercator - the bad parts</h1>
+<h1>Web Mercator - “the bad parts”</h1>
 
 </section>
-<section id="size-distortion" class="slide level2">
-<h2>Size distortion</h2>
+<section id="vorwarnung" class="slide level2">
+<h2>Vorwarnung</h2>
+<p>Dieser Vortrag ist politisch!</p>
+</section>
+<section id="grössenverzerrung" class="slide level2">
+<h2>Grössenverzerrung</h2>
 <p><img data-src="images/mercator-size-distortion-animated.gif" /></p>
-<p>Africa actually has 14 times as much area as Greenland</p>
+<p>Afrika ist in Wirklichkeit 14-mal grösser als Grönland</p>
 <aside class="notes">
 <p>Image credit: https://en.wikipedia.org/wiki/Mercator_projection</p>
 </aside>
 </section>
-<section id="thematic-mapping" class="slide level2">
-<h2>Thematic mapping</h2>
+<section id="thematische-karten" class="slide level2">
+<h2>Thematische Karten</h2>
 <p><img data-src="images/webmercator-osm-membership.png" /></p>
 </section>
-<section id="in-the-wild" class="slide level2">
-<h2>In the wild</h2>
+<section id="in-freier-wildbahn" class="slide level2">
+<h2>In freier Wildbahn</h2>
 <p><img data-src="images/webmercator-skynews.jpg" /></p>
 <aside class="notes">
 <p>On T-shirts, posters and even in school rooms Image credit:
@@ -89,8 +93,8 @@ data-cites="mastodon.social/113540237357844184">@mastodon.social/113540237357844
 <p><img data-src="images/mercator-portrait.jpg" /></p>
 <ul>
 <li>Gerardus Mercator, 1569</li>
-<li>Conformal cylindrical map projection</li>
-<li>Good for navigation</li>
+<li>Winkeltreue zylindrische Kartenprojektion</li>
+<li>Gut für die Navigation</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -105,9 +109,9 @@ class="uri">https://en.wikipedia.org/wiki/Gerardus_Mercator</a></li>
 <section id="web-mercator" class="slide level2">
 <h2>Web Mercator</h2>
 <ul>
-<li>Mercator projection cropped to ~85°N to 85°S -&gt; square, good for
-tiling</li>
-<li>Spherical and ellipsoidal mix of formulas</li>
+<li>Mercator-Projektion beschnitten auf ~85°N bis 85°S -&gt;
+quadratisch, gut für Kacheln</li>
+<li>Mischung aus sphärischen und ellipsoidalen Formeln</li>
 </ul>
 <aside class="notes">
 <p>The value 85.051129° is the latitude at which the full projected map
@@ -115,8 +119,8 @@ becomes a square</p>
 </aside>
 </section></section>
 <section>
-<section id="alternatives" class="title-slide slide level1">
-<h1>Alternatives</h1>
+<section id="alternativen" class="title-slide slide level1">
+<h1>Alternativen</h1>
 
 </section>
 <section id="section" class="slide level2">
@@ -157,9 +161,9 @@ cartography (~1570s–1670s).</p>
 <p><img data-src="images/equal-earth-etopo1.jpg" /></p>
 </section></section>
 <section>
-<section id="equal-earth-map-projection"
+<section id="equal-earth-kartenprojektion"
 class="title-slide slide level1">
-<h1>Equal Earth map projection</h1>
+<h1>Equal Earth Kartenprojektion</h1>
 <p>Bojan Šavrič, Tom Patterson, Bernhard Jenny, 2018</p>
 <p><a href="https://www.equal-earth.com/"
 class="uri">https://www.equal-earth.com/</a></p>
@@ -188,8 +192,8 @@ areas.</p>
 <p><img data-src="images/Equal-Earth-Map-11E.jpg" /></p>
 <p>Florence Meridian 11E</p>
 </section>
-<section id="support" class="slide level2">
-<h2>Support</h2>
+<section id="unterstützung" class="slide level2">
+<h2>Unterstützung</h2>
 <ul>
 <li>PROJ -&gt; GDAL, QGIS, R</li>
 <li>D3, Plotly</li>
@@ -197,20 +201,20 @@ areas.</p>
 </ul>
 </section></section>
 <section>
-<section id="web-mapping" class="title-slide slide level1">
-<h1>Web mapping</h1>
-<p>Equal Earth already in use by cartographers</p>
+<section id="web-kartographie" class="title-slide slide level1">
+<h1>Web-Kartographie</h1>
+<p>Equal Earth wird bereits von Kartographen verwendet</p>
 <div class="fragment">
-<p>Limitations:</p>
+<p>Einschränkungen:</p>
 <ul>
-<li>Limited zooming</li>
-<li>Static center meridian</li>
-<li>Tile caching</li>
+<li>Begrenztes Zoomen</li>
+<li>Statischer Mittelmeridian</li>
+<li>Kachel-Caching</li>
 </ul>
 </div>
 </section>
 <section id="tile-grid" class="slide level2">
-<h2>Tile grid</h2>
+<h2>Tile Grid</h2>
 <p><img data-src="images/grid-unscaled.jpg" /></p>
 <aside class="notes">
 <p>A quadratic grid for Equal Earth centered on Greenwich is similar to
@@ -218,8 +222,8 @@ a Web Mercator grid. Instead of Mercator grid corners at +/-20’037’508
 the grid corners of Equal Earth Greenwich are at +/-17’243’959</p>
 </aside>
 </section>
-<section id="scaled-grid" class="slide level2">
-<h2>Scaled grid</h2>
+<section id="skaliertes-tile-grid" class="slide level2">
+<h2>Skaliertes Tile Grid</h2>
 <p><img data-src="images/grid-scaled.jpg" /></p>
 <aside class="notes">
 <p>scale factor of 1.162. Conversions between geographic WGS84
@@ -233,73 +237,74 @@ coordinate projection calculations.</p>
 <p><img data-src="images/Equal-Earth-Maplibre.jpg" /></p>
 <p><a href="https://equal.bbox.earth/maplibre/"
 class="uri">https://equal.bbox.earth/maplibre/</a></p>
-<p>Web Mercator grid</p>
+<p>Web Mercator Tile Grid</p>
 </section>
 <section id="openlayers" class="slide level2">
 <h2>OpenLayers</h2>
 <p><img data-src="images/Equal-Earth-OL.jpg" /></p>
 <p><a href="https://equal.bbox.earth/ol-asia-pacific/"
 class="uri">https://equal.bbox.earth/ol-asia-pacific/</a></p>
-<p>Equal Earth Asia-Pacific, Web Mercator grid</p>
+<p>Equal Earth Asia-Pacific, Web Mercator Tile Grid</p>
 </section>
 <section id="deck.gl" class="slide level2">
 <h2>deck.gl</h2>
 <p><img data-src="images/Equal-Earth-DeckGL.jpg" /></p>
 <p><a href="https://equal.bbox.earth/deckgl/"
 class="uri">https://equal.bbox.earth/deckgl/</a></p>
-<p>MapLibre map with deck.gl layer using Web Mercator tile grid.</p>
+<p>MapLibre-Karte mit deck.gl-Layer unter Verwendung des Web
+Mercator-Kachelgitters.</p>
 </section>
-<section id="proposal-combined-projections" class="slide level2">
-<h2>Proposal: Combined projections</h2>
+<section id="proposal-kombinierte-projektionen" class="slide level2">
+<h2>Proposal: Kombinierte Projektionen</h2>
 <p><img data-src="images/Equal-Earth-Maplibre.jpg" /> <img
 data-src="images/NE-combined-Merc.jpg" /></p>
 <p><a href="https://equal.bbox.earth/maplibre-eq2merc/"
 class="uri">https://equal.bbox.earth/maplibre-eq2merc/</a></p>
-<p>Equal Earth tiles at z0-z2 and Web Mercator tiles with z &gt;= 3.</p>
+<p>Equal Earth-Kacheln bei z0-z2 und Web Mercator-Kacheln mit z &gt;=
+3.</p>
 </section>
-<section id="osm-basemap-with-combined-projections"
+<section id="osm-basiskarte-mit-kombinierten-projektionen"
 class="slide level2">
-<h2>OSM basemap with combined projections</h2>
+<h2>OSM-Basiskarte mit kombinierten Projektionen</h2>
 <p><img data-src="images/Equal-Earth-bbox.jpg" /></p>
 <p><a href="https://maps.bbox.earth/"
 class="uri">https://maps.bbox.earth/</a></p>
 <p>MapLibre with Shortbread PMTiles.</p>
 </section></section>
 <section>
-<section id="possible-improvements" class="title-slide slide level1">
-<h1>Possible improvements</h1>
+<section id="mögliche-verbesserungen" class="title-slide slide level1">
+<h1>Mögliche Verbesserungen</h1>
 
 </section>
-<section id="animated-transition-z2---z3" class="slide level2">
-<h2>Animated transition z2 -&gt; z3</h2>
+<section id="animierter-übergang-z2---z3" class="slide level2">
+<h2>Animierter Übergang z2 -&gt; z3</h2>
 <p><img data-src="images/proj-transition.gif" /></p>
 <p><a href="https://kvaleya.gitlab.io/maplibre/globe/globedemo.html"
 class="uri">https://kvaleya.gitlab.io/maplibre/globe/globedemo.html</a></p>
 </section>
-<section id="dynamic-center-meridian" class="slide level2">
-<h2>Dynamic center meridian</h2>
+<section id="dynamischer-mittelmeridian" class="slide level2">
+<h2>Dynamischer Mittelmeridian</h2>
 <p><img data-src="images/equal-earth-rotation.gif" /></p>
 <p><a href="https://observablehq.com/d/ece4d307c72c1312"
 class="uri">https://observablehq.com/d/ece4d307c72c1312</a></p>
-<p>Reproject WGS-84-Tiles?</p>
+<p>WGS-84-Kacheln umprojiizieren?</p>
 </section>
-<section id="coordinate-transformation" class="slide level2">
-<h2>Coordinate transformation</h2>
-<p>Plugins for MapLibre, OpenLayers, etc. with coordinate transformation
-functions.</p>
-<p>Adapted zoom functions between z &lt; 3 and z &gt;= 3.</p>
-<p>Done for MapLibre: <a
+<section id="koordinatentransformation" class="slide level2">
+<h2>Koordinatentransformation</h2>
+<p>Plugins für MapLibre, OpenLayers usw. mit
+Koordinatentransformationsfunktionen.</p>
+<p>Angepasste Zoom-Funktionen zwischen z &lt; 3 und z &gt;= 3.</p>
+<p>Umgesetzt für MapLibre: <a
 href="https://github.com/pka/maplibre-gl-equal-earth">github.com/pka/maplibre-gl-equal-earth</a></p>
 </section></section>
-<section id="summary" class="title-slide slide level1">
-<h1>Summary</h1>
-<p>Say farewell to Web Mercator</p>
-<p>(for world maps)</p>
-<p>and use Equal Earth instead.</p>
+<section id="zusammenfassung" class="title-slide slide level1">
+<h1>Zusammenfassung</h1>
+<p>Sagen Sie Lebewhol zu Web Mercator</p>
+<p>(für Weltkarten)</p>
+<p>und nutzen Sie stattdessen Equal Earth.</p>
 <aside class="notes">
 <ul>
 <li>Cartographic crime</li>
-<li>For South Americans: it’s a sin</li>
 <li>From now on, consider it officially forbidden</li>
 </ul>
 </aside>
