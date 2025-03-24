@@ -4,7 +4,7 @@ SLIDE_OPTIONS := "-t revealjs --css=./custom.css --slide-level=2 -s"
 
 # Generate HTML from markdown
 html:
-	test slides.md -ot docs/index.html || pandoc {{SLIDE_OPTIONS}} slides.md -o docs/index.html
+	test slides.md -ot docs/index.html || pandoc {{SLIDE_OPTIONS}} slides.md -o docs/index.html; sed -i 's|reveal.js@^4//|reveal.js@^5/|g' docs/index.html
 
 # Update HTML when slides.md changes
 watch: html
