@@ -178,9 +178,11 @@ Instead of Mercator grid corners at +/-20'037'508 the grid corners of Equal Eart
 Greenwich are at +/-17'243'959
 :::
 
-## Skaliertes Tile Grid
+## Tile Grid skaliert
 
 ![](images/grid-scaled.jpg)
+
+Skalierung auf Mercator-Breite.
 
 ::: notes
 scale factor of 1.162. Conversions between geographic WGS84 coordinates and the map coordinate reference
@@ -225,9 +227,7 @@ Equal Earth-Kacheln bei z0-z2 und Web Mercator-Kacheln mit z >= 3.
 
 ![](images/Equal-Earth-bbox.jpg)
 
-<https://maps.bbox.earth/>
-
-MapLibre with Shortbread PMTiles.
+MapLibre mit Shortbread PMTiles.
 
 # Mögliche Verbesserungen
 
@@ -256,18 +256,18 @@ Umgesetzt für MapLibre: [github.com/pka/maplibre-gl-equal-earth](https://github
 
 # Zusammenfassung
 
-Sagen Sie Lebewhol zu Web Mercator
+Sag Lebewohl zu Web Mercator
 
 (für Weltkarten)
 
-und nutzen Sie stattdessen Equal Earth.
+und benutze Equal Earth.
 
 ::: notes
 - Cartographic crime
 - From now on, consider it officially forbidden
 :::
 
-# Thank you
+# Danke
 
 Pirmin Kalberer
 
