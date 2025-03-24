@@ -1,18 +1,18 @@
-% Farewell Web Mercator
+% Lebewohl Web Mercator
 % Pirmin Kalberer @implgeo
-% FOSS4G 2024 Belém
+% FOSSGIS 2025 Münster
 ---
 width: 1600
 height: 900
 ---
 
-# About me
+# Über mich
 
-GIS developer @ Sourcepole, Switzerland
+GIS-Entwickler @ Sourcepole, Schweiz
 
-Web GIS, QGIS and other OSGeo projects
+Web GIS, QGIS und andere OSGeo-Projekte
 
-t-rex tile server -> BBOX server
+t-rex Tile-Server -> BBOX-Server
 
 ::: notes
 OSM:
@@ -23,23 +23,27 @@ FOSSGIS e.V. board (German OSM chapter)
 . . .
 :::
 
-# Web Mercator - the bad parts
+# Web Mercator - "the bad parts"
 
-## Size distortion
+## Vorwarnung
+
+Dieser Vortrag ist politisch!
+
+## Grössenverzerrung
 
 ![](images/mercator-size-distortion-animated.gif)
 
-Africa actually has 14 times as much area as Greenland
+Afrika ist in Wirklichkeit 14-mal grösser als Grönland
 
 ::: notes
 Image credit: https://en.wikipedia.org/wiki/Mercator_projection
 :::
 
-## Thematic mapping
+## Thematische Karten
 
 ![](images/webmercator-osm-membership.png)
 
-## In the wild
+## In freier Wildbahn
 
 ![](images/webmercator-skynews.jpg)
 
@@ -54,8 +58,8 @@ Image credit: https://mapstodon.space/@luis_de_sousa@mastodon.social/11354023735
 ![](images/mercator-portrait.jpg)
 
 * Gerardus Mercator, 1569
-* Conformal cylindrical map projection
-* Good for navigation
+* Winkeltreue zylindrische Kartenprojektion
+* Gut für die Navigation
 
 ::: notes
 * north everywhere "up" and south "down", while preserving local directions and shapes
@@ -65,15 +69,15 @@ Image credit: https://mapstodon.space/@luis_de_sousa@mastodon.social/11354023735
 
 ## Web Mercator
 
-* Mercator projection cropped to ~85°N to 85°S
-  -> square, good for tiling
-* Spherical and ellipsoidal mix of formulas
+* Mercator-Projektion beschnitten auf ~85°N bis 85°S
+-> quadratisch, gut für Kacheln
+* Mischung aus sphärischen und ellipsoidalen Formeln
 
 ::: notes
 The value 85.051129° is the latitude at which the full projected map becomes a square
 :::
 
-# Alternatives
+# Alternativen
 
 ##
 
@@ -111,7 +115,7 @@ XKCD
 
 ![](images/equal-earth-etopo1.jpg)
 
-# Equal Earth map projection
+# Equal Earth Kartenprojektion
 
 Bojan Šavrič, Tom Patterson, Bernhard Jenny, 2018
 
@@ -145,26 +149,26 @@ EPSG:8859
 
 Florence Meridian 11E
 
-## Support
+## Unterstützung
 
 * PROJ -> GDAL, QGIS, R
 * D3, Plotly
 * proj4js
 
-# Web mapping
+# Web-Kartographie
 
-Equal Earth already in use
-by cartographers
+Equal Earth wird bereits
+von Kartographen verwendet
 
 . . .
 
-Limitations:
+Einschränkungen:
 
-* Limited zooming
-* Static center meridian
-* Tile caching
+* Begrenztes Zoomen
+* Statischer Mittelmeridian
+* Kachel-Caching
 
-## Tile grid
+## Tile Grid
 
 ![](images/grid-unscaled.jpg)
 
@@ -174,7 +178,7 @@ Instead of Mercator grid corners at +/-20'037'508 the grid corners of Equal Eart
 Greenwich are at +/-17'243'959
 :::
 
-## Scaled grid
+## Skaliertes Tile Grid
 
 ![](images/grid-scaled.jpg)
 
@@ -190,7 +194,7 @@ But maps can be displayed without any coordinate projection calculations.
 
 <https://equal.bbox.earth/maplibre/>
 
-Web Mercator grid
+Web Mercator Tile Grid
 
 ## OpenLayers
 
@@ -198,7 +202,7 @@ Web Mercator grid
 
 <https://equal.bbox.earth/ol-asia-pacific/>
 
-Equal Earth Asia-Pacific, Web Mercator grid
+Equal Earth Asia-Pacific, Web Mercator Tile Grid
 
 ## deck.gl
 
@@ -206,18 +210,18 @@ Equal Earth Asia-Pacific, Web Mercator grid
 
 <https://equal.bbox.earth/deckgl/>
 
-MapLibre map with deck.gl layer using Web Mercator tile grid.
+MapLibre-Karte mit deck.gl-Layer unter Verwendung des Web Mercator-Kachelgitters.
 
-## Proposal: Combined projections
+## Proposal: Kombinierte Projektionen
 
 ![](images/Equal-Earth-Maplibre.jpg)
 ![](images/NE-combined-Merc.jpg)
 
 <https://equal.bbox.earth/maplibre-eq2merc/>
 
-Equal Earth tiles at z0-z2 and Web Mercator tiles with z >= 3.
+Equal Earth-Kacheln bei z0-z2 und Web Mercator-Kacheln mit z >= 3.
 
-## OSM basemap with combined projections
+## OSM-Basiskarte mit kombinierten Projektionen
 
 ![](images/Equal-Earth-bbox.jpg)
 
@@ -225,42 +229,41 @@ Equal Earth tiles at z0-z2 and Web Mercator tiles with z >= 3.
 
 MapLibre with Shortbread PMTiles.
 
-# Possible improvements
+# Mögliche Verbesserungen
 
-## Animated transition z2 -> z3
+## Animierter Übergang z2 -> z3
 
 ![](images/proj-transition.gif)
 
   <https://kvaleya.gitlab.io/maplibre/globe/globedemo.html>
 
-## Dynamic center meridian
+## Dynamischer Mittelmeridian
 
 ![](images/equal-earth-rotation.gif)
 
 <https://observablehq.com/d/ece4d307c72c1312>
 
-Reproject WGS-84-Tiles?
+WGS-84-Kacheln umprojiizieren?
 
-## Coordinate transformation
+## Koordinatentransformation
 
-Plugins for MapLibre, OpenLayers, etc.
-with coordinate transformation functions.
+Plugins für MapLibre, OpenLayers usw.
+mit Koordinatentransformationsfunktionen.
 
-Adapted zoom functions between z < 3 and z >= 3.
+Angepasste Zoom-Funktionen zwischen z < 3 und z >= 3.
 
-Done for MapLibre: [github.com/pka/maplibre-gl-equal-earth](https://github.com/pka/maplibre-gl-equal-earth)
+Umgesetzt für MapLibre: [github.com/pka/maplibre-gl-equal-earth](https://github.com/pka/maplibre-gl-equal-earth)
 
-# Summary
+# Zusammenfassung
 
-Say farewell to Web Mercator
+Sagen Sie Lebewhol zu Web Mercator
 
-(for world maps)
+(für Weltkarten)
 
-and use Equal Earth instead.
+und nutzen Sie stattdessen Equal Earth.
 
 ::: notes
 - Cartographic crime
-- For South Americans: it's a sin
 - From now on, consider it officially forbidden
 :::
 
