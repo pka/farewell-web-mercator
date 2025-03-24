@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - german
   pull_request:
 
 permissions:
@@ -13,9 +14,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
       - name: Install just
         uses: taiki-e/install-action@v2
@@ -35,7 +34,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/german'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
