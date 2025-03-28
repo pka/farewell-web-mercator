@@ -61,9 +61,9 @@ class="title-slide slide level1">
 <h1>Web Mercator - “the bad parts”</h1>
 
 </section>
-<section id="vorwarnung" class="slide level2">
-<h2>Vorwarnung</h2>
-<p>Dieser Vortrag ist politisch!</p>
+<section id="warnung" class="slide level2">
+<h2>WARNUNG</h2>
+<p>Dieser Vortrag kann politische Aussagen enthalten!</p>
 </section>
 <section id="grössenverzerrung" class="slide level2">
 <h2>Grössenverzerrung</h2>
@@ -203,13 +203,13 @@ areas.</p>
 <section>
 <section id="web-kartographie" class="title-slide slide level1">
 <h1>Web-Kartographie</h1>
-<p>Equal Earth wird bereits von Kartographen verwendet</p>
+<p>Equal Earth wird bereits von Kartographen verwendet.</p>
 <div class="fragment">
 <p>Einschränkungen:</p>
 <ul>
 <li>Begrenztes Zoomen</li>
 <li>Statischer Mittelmeridian</li>
-<li>Kachel-Caching</li>
+<li>Kachel-Schema</li>
 </ul>
 </div>
 </section>
@@ -261,18 +261,21 @@ Mercator-Kachelgitters.</p>
 data-src="images/NE-combined-Merc.jpg" /></p>
 <p><a href="https://equal.bbox.earth/maplibre-eq2merc/"
 class="uri">https://equal.bbox.earth/maplibre-eq2merc/</a></p>
-<p>Equal Earth-Kacheln bei z0-z2 und Web Mercator-Kacheln mit z &gt;=
-3.</p>
-</section>
-<section id="osm-basiskarte-mit-kombinierten-projektionen"
-class="slide level2">
-<h2>OSM-Basiskarte mit kombinierten Projektionen</h2>
-<p><img data-src="images/Equal-Earth-bbox.jpg" /></p>
-<p>MapLibre mit Shortbread PMTiles.</p>
+<p>Equal Earth für z0-z2 und Web Mercator für z &gt;= 3.</p>
+<p>Kacheln für z0-z2 in geographischen Koordinaten (WGS84).</p>
 </section></section>
+<section id="was-ist-schon-vorhanden" class="title-slide slide level1">
+<h1>Was ist schon vorhanden?</h1>
+<ul>
+<li>Plugin für minimale Koordinatentransformationen für MapLibre</li>
+<li>Informationen und Code-Snippets: <a
+href="https://equal.bbox.earth">equal.bbox.earth</a></li>
+</ul>
+</section>
+
 <section>
-<section id="mögliche-verbesserungen" class="title-slide slide level1">
-<h1>Mögliche Verbesserungen</h1>
+<section id="was-fehlt-noch" class="title-slide slide level1">
+<h1>Was fehlt noch?</h1>
 
 </section>
 <section id="animierter-übergang-z2---z3" class="slide level2">
@@ -286,18 +289,18 @@ class="uri">https://kvaleya.gitlab.io/maplibre/globe/globedemo.html</a></p>
 <p><img data-src="images/equal-earth-rotation.gif" /></p>
 <p><a href="https://observablehq.com/d/ece4d307c72c1312"
 class="uri">https://observablehq.com/d/ece4d307c72c1312</a></p>
-<p>WGS-84-Kacheln umprojiizieren?</p>
 </section>
-<section id="koordinatentransformation" class="slide level2">
-<h2>Koordinatentransformation</h2>
-<p>Plugins für MapLibre, OpenLayers usw. mit
-Koordinatentransformationsfunktionen.</p>
-<p>Angepasste Zoom-Funktionen zwischen z &lt; 3 und z &gt;= 3.</p>
-<p>Umgesetzt für MapLibre: <a
-href="https://github.com/pka/maplibre-gl-equal-earth">github.com/pka/maplibre-gl-equal-earth</a></p>
+<section id="kernerweiterungen-viewer" class="slide level2">
+<h2>Kernerweiterungen Viewer</h2>
+<h3 id="maplibre-projektionsunterstützung">MapLibre:
+Projektionsunterstützung</h3>
+<h3
+id="openlayer-unterstützung-für-umprojizierte-vektor-kacheln">OpenLayer:
+Unterstützung für umprojizierte Vektor-Kacheln</h3>
+<p>Sponsoring gesucht!</p>
 </section></section>
-<section id="zusammenfassung" class="title-slide slide level1">
-<h1>Zusammenfassung</h1>
+<section id="fazit" class="title-slide slide level1">
+<h1>Fazit</h1>
 <p>Sag Lebewohl zu Web Mercator</p>
 <p>(für Weltkarten)</p>
 <p>und benutze Equal Earth.</p>
