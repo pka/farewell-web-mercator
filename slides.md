@@ -25,9 +25,9 @@ FOSSGIS e.V. board (German OSM chapter)
 
 # Web Mercator - "the bad parts"
 
-## Vorwarnung
+## WARNUNG
 
-Dieser Vortrag ist politisch!
+Dieser Vortrag kann politische Aussagen enthalten!
 
 ## Grössenverzerrung
 
@@ -51,7 +51,6 @@ Image credit: https://en.wikipedia.org/wiki/Mercator_projection
 On T-shirts, posters and even in school rooms
 Image credit: https://mapstodon.space/@luis_de_sousa@mastodon.social/113540237357844184
 :::
-
 
 # Mercator projection
 
@@ -158,7 +157,7 @@ Florence Meridian 11E
 # Web-Kartographie
 
 Equal Earth wird bereits
-von Kartographen verwendet
+von Kartographen verwendet.
 
 . . .
 
@@ -166,7 +165,7 @@ Einschränkungen:
 
 * Begrenztes Zoomen
 * Statischer Mittelmeridian
-* Kachel-Caching
+* Kachel-Schema
 
 ## Tile Grid
 
@@ -221,15 +220,16 @@ MapLibre-Karte mit deck.gl-Layer unter Verwendung des Web Mercator-Kachelgitters
 
 <https://equal.bbox.earth/maplibre-eq2merc/>
 
-Equal Earth-Kacheln bei z0-z2 und Web Mercator-Kacheln mit z >= 3.
+Equal Earth für z0-z2 und Web Mercator für z >= 3.
 
-## OSM-Basiskarte mit kombinierten Projektionen
+Kacheln für z0-z2 in geographischen Koordinaten (WGS84).
 
-![](images/Equal-Earth-bbox.jpg)
+# Was ist schon vorhanden?
 
-MapLibre mit Shortbread PMTiles.
+* Plugin für minimale Koordinatentransformationen für MapLibre
+* Informationen und Code-Snippets: [equal.bbox.earth](https://equal.bbox.earth)
 
-# Mögliche Verbesserungen
+# Was fehlt noch?
 
 ## Animierter Übergang z2 -> z3
 
@@ -243,18 +243,15 @@ MapLibre mit Shortbread PMTiles.
 
 <https://observablehq.com/d/ece4d307c72c1312>
 
-WGS-84-Kacheln umprojiizieren?
+## Kernerweiterungen Viewer
 
-## Koordinatentransformation
+### MapLibre: Projektionsunterstützung
 
-Plugins für MapLibre, OpenLayers usw.
-mit Koordinatentransformationsfunktionen.
+### OpenLayer: Unterstützung für umprojizierte Vektor-Kacheln
 
-Angepasste Zoom-Funktionen zwischen z < 3 und z >= 3.
+Sponsoring gesucht!
 
-Umgesetzt für MapLibre: [github.com/pka/maplibre-gl-equal-earth](https://github.com/pka/maplibre-gl-equal-earth)
-
-# Zusammenfassung
+# Fazit
 
 Sag Lebewohl zu Web Mercator
 
