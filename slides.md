@@ -245,9 +245,8 @@ Kacheln für z0-z2 in geographischen Koordinaten (WGS84).
 
 ## Kernerweiterungen Viewer
 
-### MapLibre: Projektionsunterstützung
-
-### OpenLayer: Unterstützung für umprojizierte Vektor-Kacheln
+* MapLibre: Projektionsunterstützung
+* OpenLayers: Unterstützung für umprojizierte Vektor-Kacheln
 
 Sponsoring gesucht!
 
@@ -269,5 +268,7 @@ und benutze Equal Earth.
 Pirmin Kalberer
 
 [mapstodon.space/@implgeo](https://mapstodon.space/@implgeo)
+
+pka@sourcepole.ch
 
 [equal.bbox.earth](https://equal.bbox.earth)
