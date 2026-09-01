@@ -198,7 +198,7 @@ Dynamic projection demo: https://ahocevar.net/fossgis-2026/14
 
 * Use data in Equal Earth projection
   * Which tile grids?
-  * PoC FOSS4G Belèm: Equal Earth projected data in Mercator grid
+  * PoC SotM EU 2024: Equal Earth projected data in Mercator grid
 * Reproject data from WGS84 (or Mercator?)
 
 ## How can you help?
