@@ -1,6 +1,6 @@
-% Farewell Web Mercator
+% Interactive web mapping with Equal Earth projection
 % Pirmin Kalberer @implgeo
-% FOSS4G 2024 Belém
+% FOSS4G 2026 Hiroshima
 ---
 width: 1600
 height: 900
@@ -22,6 +22,16 @@ Lazy mapper (55 changesets in 15 years)
 FOSSGIS e.V. board (German OSM chapter)
 . . .
 :::
+
+# The current state of Web Mapping
+
+. . .
+
+* Web Mercator projection
+* Sometimes a globe
+
+![](images/maplibre-native-android.jpg)
+
 
 # Web Mercator - the bad parts
 
@@ -48,7 +58,6 @@ On T-shirts, posters and even in school rooms
 Image credit: https://mapstodon.space/@luis_de_sousa@mastodon.social/113540237357844184
 :::
 
-
 # Mercator projection
 
 ![](images/mercator-portrait.jpg)
@@ -72,44 +81,6 @@ Image credit: https://mapstodon.space/@luis_de_sousa@mastodon.social/11354023735
 ::: notes
 The value 85.051129° is the latitude at which the full projected map becomes a square
 :::
-
-# Alternatives
-
-##
-
-![](images/ortelius-1572.jpg)
-
-Theatrum Orbis Terrarum, 1572
-
-::: notes
-Cartographer Abraham Ortelius issues Theatrum Orbis Terrarum, the first modern atlas.
-
-Three Latin editions of this (besides a Dutch, a French and a German edition) appeared before the end of 1572; 25 editions came out before Ortelius' death in 1598; and several others were published subsequently, for the atlas continued to be in demand till about 1612. It is often considered as the official beginning of the Golden Age of Netherlandish cartography (~1570s–1670s).
-:::
-
-##
-
-![](images/xkcd-map_projections.png)
-
-::: notes
-XKCD
-:::
-
-##
-
-![](images/tweet-gmaps-globe-2018.png)
-
-::: notes
-2018
-:::
-
-##
-
-![](images/mastodon-benschmidt-gmaps.png)
-
-##
-
-![](images/equal-earth-etopo1.jpg)
 
 # Equal Earth map projection
 
@@ -145,124 +116,96 @@ EPSG:8859
 
 Florence Meridian 11E
 
-## Support
+# Behaviour for interactive maps
 
-* PROJ -> GDAL, QGIS, R
-* D3, Plotly
-* proj4js
-
-# Web mapping
-
-Equal Earth already in use
-by cartographers
-
-. . .
-
-Limitations:
-
-* Limited zooming
-* Static center meridian
-* Tile caching
-
-## Tile grid
-
-![](images/grid-unscaled.jpg)
-
-::: notes
-A quadratic grid for Equal Earth centered on Greenwich is similar to a Web Mercator grid.
-Instead of Mercator grid corners at +/-20'037'508 the grid corners of Equal Earth
-Greenwich are at +/-17'243'959
-:::
-
-## Scaled grid
-
-![](images/grid-scaled.jpg)
-
-::: notes
-scale factor of 1.162. Conversions between geographic WGS84 coordinates and the map coordinate reference
-system give wrong results without adapted calculations.
-But maps can be displayed without any coordinate projection calculations.
-:::
-
-## MapLibre
-
-![](images/Equal-Earth-Maplibre.jpg)
-
-<https://equal.bbox.earth/maplibre/>
-
-Web Mercator grid
-
-## OpenLayers
-
-![](images/Equal-Earth-OL.jpg)
-
-<https://equal.bbox.earth/ol-asia-pacific/>
-
-Equal Earth Asia-Pacific, Web Mercator grid
-
-## deck.gl
-
-![](images/Equal-Earth-DeckGL.jpg)
-
-<https://equal.bbox.earth/deckgl/>
-
-MapLibre map with deck.gl layer using Web Mercator tile grid.
-
-## Proposal: Combined projections
-
-![](images/Equal-Earth-Maplibre.jpg)
-![](images/NE-combined-Merc.jpg)
-
-<https://equal.bbox.earth/maplibre-eq2merc/>
-
-Equal Earth tiles at z0-z2 and Web Mercator tiles with z >= 3.
-
-## OSM basemap with combined projections
-
-![](images/Equal-Earth-bbox.jpg)
-
-<https://maps.bbox.earth/>
-
-MapLibre with Shortbread PMTiles.
-
-# Possible improvements
-
-## Animated transition z2 -> z3
-
-![](images/proj-transition.gif)
-
-  <https://kvaleya.gitlab.io/maplibre/globe/globedemo.html>
+Two proposals
 
 ## Dynamic center meridian
 
 ![](images/equal-earth-rotation.gif)
 
-<https://observablehq.com/d/ece4d307c72c1312>
+[Interactive example (OpenLayers)](https://openlayers.org/en/latest/examples/equal-earth-geojson.html)
+
+::: notes
 
 Reproject WGS-84-Tiles?
 
-## Coordinate transformation
+<https://observablehq.com/d/ece4d307c72c1312>
+:::
 
-Plugins for MapLibre, OpenLayers, etc.
-with coordinate transformation functions.
+## Use Mercator for higher zoom levels
 
-Adapted zoom functions between z < 3 and z >= 3.
+![](images/Equal-Earth-Maplibre.jpg)
+![](images/NE-combined-Merc.jpg)
 
-Done for MapLibre: [github.com/pka/maplibre-gl-equal-earth](https://github.com/pka/maplibre-gl-equal-earth)
-
-# Summary
-
-Say farewell to Web Mercator
-
-(for world maps)
-
-and use Equal Earth instead.
+* World view: Equal earth
+* Regional view: Mercator
 
 ::: notes
-- Cartographic crime
-- For South Americans: it's a sin
-- From now on, consider it officially forbidden
+<https://equal.bbox.earth/maplibre-eq2merc/>
 :::
+
+## Challenges: Antimeridian problems
+
+![](images/antimerdian-qgis.png)
+
+Solutions:
+
+* Prepare data (split at potential antimeridians)
+* Improve rendering algorithms
+
+## Smooth transition Equal Earth -> Mercator
+
+![](images/proj-transition.gif)
+
+Example: MapLibre globe
+
+::: notes
+<https://kvaleya.gitlab.io/maplibre/globe/globedemo.html>
+:::
+
+# Software support
+
+## Projection
+
+* PROJ -> GDAL, QGIS, R
+* proj4js
+* D3
+
+## OpenLayers
+
+* Projection support for raster and vector data
+* Reprojection of vector tiles
+* Support for non-Mercator grids
+
+::: notes
+Dynamic projection demo: https://ahocevar.net/fossgis-2026/14
+:::
+
+## MapLibre
+
+* Single tile grid
+* Globe view reprojected from Mercator tiles
+* In development: Equal earth view reprojected from Mercator tiles!
+
+::: notes
+![](images/Equal-Earth-Maplibre.jpg)
+
+<https://equal.bbox.earth/maplibre/>
+:::
+
+## Ways to support Equal Earth
+
+* Use data in Equal Earth projection
+  * Which tile grids?
+  * PoC FOSS4G Belèm: Equal Earth projected data in Mercator grid
+* Reproject data from WGS84 (or Mercator?)
+
+## How can you help?
+
+* Sponsor development
+* Call out bad maps and spread the word
+* Use Equal Earth for world maps
 
 # Thank you
 
@@ -270,4 +213,4 @@ Pirmin Kalberer
 
 [mapstodon.space/@implgeo](https://mapstodon.space/@implgeo)
 
-[equal.bbox.earth](https://equal.bbox.earth)
+<pka@sourcepole.com>
