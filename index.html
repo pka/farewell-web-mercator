@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Pirmin Kalberer @implgeo">
-  <title>Farewell Web Mercator</title>
+  <title>Interactive web mapping with Equal Earth projection</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -38,10 +38,11 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Farewell Web Mercator</h1>
+  <h1 class="title">Interactive web mapping with Equal Earth
+projection</h1>
   <p class="author">Pirmin Kalberer <span class="citation"
 data-cites="implgeo">@implgeo</span></p>
-  <p class="date">FOSS4G 2024 Belém</p>
+  <p class="date">FOSS4G 2026 Hiroshima</p>
 </section>
 
 <section id="about-me" class="title-slide slide level1">
@@ -53,6 +54,18 @@ data-cites="implgeo">@implgeo</span></p>
 <p>OSM: . . . Lazy mapper (55 changesets in 15 years) . . . FOSSGIS e.V.
 board (German OSM chapter) . . .</p>
 </aside>
+</section>
+
+<section id="the-current-state-of-web-mapping"
+class="title-slide slide level1">
+<h1>The current state of Web Mapping</h1>
+<div class="fragment">
+<ul>
+<li>Web Mercator projection</li>
+<li>Sometimes a globe</li>
+</ul>
+<p><img data-src="images/maplibre-native-android.jpg" /></p>
+</div>
 </section>
 
 <section>
@@ -115,48 +128,6 @@ becomes a square</p>
 </aside>
 </section></section>
 <section>
-<section id="alternatives" class="title-slide slide level1">
-<h1>Alternatives</h1>
-
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p><img data-src="images/ortelius-1572.jpg" /></p>
-<p>Theatrum Orbis Terrarum, 1572</p>
-<aside class="notes">
-<p>Cartographer Abraham Ortelius issues Theatrum Orbis Terrarum, the
-first modern atlas.</p>
-<p>Three Latin editions of this (besides a Dutch, a French and a German
-edition) appeared before the end of 1572; 25 editions came out before
-Ortelius’ death in 1598; and several others were published subsequently,
-for the atlas continued to be in demand till about 1612. It is often
-considered as the official beginning of the Golden Age of Netherlandish
-cartography (~1570s–1670s).</p>
-</aside>
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<p><img data-src="images/xkcd-map_projections.png" /></p>
-<aside class="notes">
-<p>XKCD</p>
-</aside>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<p><img data-src="images/tweet-gmaps-globe-2018.png" /></p>
-<aside class="notes">
-<p>2018</p>
-</aside>
-</section>
-<section id="section-3" class="slide level2">
-<h2></h2>
-<p><img data-src="images/mastodon-benschmidt-gmaps.png" /></p>
-</section>
-<section id="section-4" class="slide level2">
-<h2></h2>
-<p><img data-src="images/equal-earth-etopo1.jpg" /></p>
-</section></section>
-<section>
 <section id="equal-earth-map-projection"
 class="title-slide slide level1">
 <h1>Equal Earth map projection</h1>
@@ -187,130 +158,121 @@ areas.</p>
 <h2>Equal Earth Florence</h2>
 <p><img data-src="images/Equal-Earth-Map-11E.jpg" /></p>
 <p>Florence Meridian 11E</p>
-</section>
-<section id="support" class="slide level2">
-<h2>Support</h2>
-<ul>
-<li>PROJ -&gt; GDAL, QGIS, R</li>
-<li>D3, Plotly</li>
-<li>proj4js</li>
-</ul>
 </section></section>
 <section>
-<section id="web-mapping" class="title-slide slide level1">
-<h1>Web mapping</h1>
-<p>Equal Earth already in use by cartographers</p>
-<div class="fragment">
-<p>Limitations:</p>
-<ul>
-<li>Limited zooming</li>
-<li>Static center meridian</li>
-<li>Tile caching</li>
-</ul>
-</div>
-</section>
-<section id="tile-grid" class="slide level2">
-<h2>Tile grid</h2>
-<p><img data-src="images/grid-unscaled.jpg" /></p>
-<aside class="notes">
-<p>A quadratic grid for Equal Earth centered on Greenwich is similar to
-a Web Mercator grid. Instead of Mercator grid corners at +/-20’037’508
-the grid corners of Equal Earth Greenwich are at +/-17’243’959</p>
-</aside>
-</section>
-<section id="scaled-grid" class="slide level2">
-<h2>Scaled grid</h2>
-<p><img data-src="images/grid-scaled.jpg" /></p>
-<aside class="notes">
-<p>scale factor of 1.162. Conversions between geographic WGS84
-coordinates and the map coordinate reference system give wrong results
-without adapted calculations. But maps can be displayed without any
-coordinate projection calculations.</p>
-</aside>
-</section>
-<section id="maplibre" class="slide level2">
-<h2>MapLibre</h2>
-<p><img data-src="images/Equal-Earth-Maplibre.jpg" /></p>
-<p><a href="https://equal.bbox.earth/maplibre/"
-class="uri">https://equal.bbox.earth/maplibre/</a></p>
-<p>Web Mercator grid</p>
-</section>
-<section id="openlayers" class="slide level2">
-<h2>OpenLayers</h2>
-<p><img data-src="images/Equal-Earth-OL.jpg" /></p>
-<p><a href="https://equal.bbox.earth/ol-asia-pacific/"
-class="uri">https://equal.bbox.earth/ol-asia-pacific/</a></p>
-<p>Equal Earth Asia-Pacific, Web Mercator grid</p>
-</section>
-<section id="deck.gl" class="slide level2">
-<h2>deck.gl</h2>
-<p><img data-src="images/Equal-Earth-DeckGL.jpg" /></p>
-<p><a href="https://equal.bbox.earth/deckgl/"
-class="uri">https://equal.bbox.earth/deckgl/</a></p>
-<p>MapLibre map with deck.gl layer using Web Mercator tile grid.</p>
-</section>
-<section id="proposal-combined-projections" class="slide level2">
-<h2>Proposal: Combined projections</h2>
-<p><img data-src="images/Equal-Earth-Maplibre.jpg" /> <img
-data-src="images/NE-combined-Merc.jpg" /></p>
-<p><a href="https://equal.bbox.earth/maplibre-eq2merc/"
-class="uri">https://equal.bbox.earth/maplibre-eq2merc/</a></p>
-<p>Equal Earth tiles at z0-z2 and Web Mercator tiles with z &gt;= 3.</p>
-</section>
-<section id="osm-basemap-with-combined-projections"
-class="slide level2">
-<h2>OSM basemap with combined projections</h2>
-<p><img data-src="images/Equal-Earth-bbox.jpg" /></p>
-<p><a href="https://maps.bbox.earth/"
-class="uri">https://maps.bbox.earth/</a></p>
-<p>MapLibre with Shortbread PMTiles.</p>
-</section></section>
-<section>
-<section id="possible-improvements" class="title-slide slide level1">
-<h1>Possible improvements</h1>
-
-</section>
-<section id="animated-transition-z2---z3" class="slide level2">
-<h2>Animated transition z2 -&gt; z3</h2>
-<p><img data-src="images/proj-transition.gif" /></p>
-<p><a href="https://kvaleya.gitlab.io/maplibre/globe/globedemo.html"
-class="uri">https://kvaleya.gitlab.io/maplibre/globe/globedemo.html</a></p>
+<section id="behaviour-for-interactive-maps"
+class="title-slide slide level1">
+<h1>Behaviour for interactive maps</h1>
+<p>Two proposals</p>
 </section>
 <section id="dynamic-center-meridian" class="slide level2">
 <h2>Dynamic center meridian</h2>
 <p><img data-src="images/equal-earth-rotation.gif" /></p>
+<p><a
+href="https://openlayers.org/en/latest/examples/equal-earth-geojson.html">Interactive
+example (OpenLayers)</a></p>
+<aside class="notes">
+<p>Reproject WGS-84-Tiles?</p>
 <p><a href="https://observablehq.com/d/ece4d307c72c1312"
 class="uri">https://observablehq.com/d/ece4d307c72c1312</a></p>
-<p>Reproject WGS-84-Tiles?</p>
-</section>
-<section id="coordinate-transformation" class="slide level2">
-<h2>Coordinate transformation</h2>
-<p>Plugins for MapLibre, OpenLayers, etc. with coordinate transformation
-functions.</p>
-<p>Adapted zoom functions between z &lt; 3 and z &gt;= 3.</p>
-<p>Done for MapLibre: <a
-href="https://github.com/pka/maplibre-gl-equal-earth">github.com/pka/maplibre-gl-equal-earth</a></p>
-</section></section>
-<section id="summary" class="title-slide slide level1">
-<h1>Summary</h1>
-<p>Say farewell to Web Mercator</p>
-<p>(for world maps)</p>
-<p>and use Equal Earth instead.</p>
-<aside class="notes">
-<ul>
-<li>Cartographic crime</li>
-<li>For South Americans: it’s a sin</li>
-<li>From now on, consider it officially forbidden</li>
-</ul>
 </aside>
 </section>
+<section id="use-mercator-for-higher-zoom-levels" class="slide level2">
+<h2>Use Mercator for higher zoom levels</h2>
+<p><img data-src="images/Equal-Earth-Maplibre.jpg" /> <img
+data-src="images/NE-combined-Merc.jpg" /></p>
+<ul>
+<li>World view: Equal earth</li>
+<li>Regional view: Mercator</li>
+</ul>
+<aside class="notes">
+<p><a href="https://equal.bbox.earth/maplibre-eq2merc/"
+class="uri">https://equal.bbox.earth/maplibre-eq2merc/</a></p>
+</aside>
+</section>
+<section id="challenges-antimeridian-problems" class="slide level2">
+<h2>Challenges: Antimeridian problems</h2>
+<p><img data-src="images/antimerdian-qgis.png" /></p>
+<p>Solutions:</p>
+<ul>
+<li>Prepare data (split at potential antimeridians)</li>
+<li>Improve rendering algorithms</li>
+</ul>
+</section>
+<section id="smooth-transition-equal-earth---mercator"
+class="slide level2">
+<h2>Smooth transition Equal Earth -&gt; Mercator</h2>
+<p><img data-src="images/proj-transition.gif" /></p>
+<p>Example: MapLibre globe</p>
+<aside class="notes">
+<p><a href="https://kvaleya.gitlab.io/maplibre/globe/globedemo.html"
+class="uri">https://kvaleya.gitlab.io/maplibre/globe/globedemo.html</a></p>
+</aside>
+</section></section>
+<section>
+<section id="software-support" class="title-slide slide level1">
+<h1>Software support</h1>
 
+</section>
+<section id="projection" class="slide level2">
+<h2>Projection</h2>
+<ul>
+<li>PROJ -&gt; GDAL, QGIS, R</li>
+<li>proj4js</li>
+<li>D3</li>
+</ul>
+</section>
+<section id="openlayers" class="slide level2">
+<h2>OpenLayers</h2>
+<ul>
+<li>Projection support for raster and vector data</li>
+<li>Reprojection of vector tiles</li>
+<li>Support for non-Mercator grids</li>
+</ul>
+<aside class="notes">
+<p>Dynamic projection demo: https://ahocevar.net/fossgis-2026/14</p>
+</aside>
+</section>
+<section id="maplibre" class="slide level2">
+<h2>MapLibre</h2>
+<ul>
+<li>Single tile grid</li>
+<li>Globe view reprojected from Mercator tiles</li>
+<li>In development: Equal earth view reprojected from Mercator
+tiles!</li>
+</ul>
+<aside class="notes">
+<p><img data-src="images/Equal-Earth-Maplibre.jpg" /></p>
+<p><a href="https://equal.bbox.earth/maplibre/"
+class="uri">https://equal.bbox.earth/maplibre/</a></p>
+</aside>
+</section>
+<section id="ways-to-support-equal-earth" class="slide level2">
+<h2>Ways to support Equal Earth</h2>
+<ul>
+<li>Use data in Equal Earth projection
+<ul>
+<li>Which tile grids?</li>
+<li>PoC FOSS4G Belèm: Equal Earth projected data in Mercator grid</li>
+</ul></li>
+<li>Reproject data from WGS84 (or Mercator?)</li>
+</ul>
+</section>
+<section id="how-can-you-help" class="slide level2">
+<h2>How can you help?</h2>
+<ul>
+<li>Sponsor development</li>
+<li>Call out bad maps and spread the word</li>
+<li>Use Equal Earth for world maps</li>
+</ul>
+</section></section>
 <section id="thank-you" class="title-slide slide level1">
 <h1>Thank you</h1>
 <p>Pirmin Kalberer</p>
 <p><a href="https://mapstodon.space/@implgeo">mapstodon.space/<span
 class="citation" data-cites="implgeo">@implgeo</span></a></p>
-<p><a href="https://equal.bbox.earth">equal.bbox.earth</a></p>
+<p><a href="mailto:pka@sourcepole.com"
+class="email">pka@sourcepole.com</a></p>
 </section>
     </div>
   </div>
