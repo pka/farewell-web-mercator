@@ -8,7 +8,7 @@ height: 900
 
 # About me
 
-GIS developer @ Sourcepole, Switzerland
+Co-founder & developer @ Sourcepole, Switzerland
 
 Web GIS, QGIS and other OSGeo projects
 
