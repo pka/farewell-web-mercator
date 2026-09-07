@@ -13,3 +13,8 @@ watch: html
 # Open HTML in browser
 open:
 	xdg-open docs/index.html
+
+# Build HTML for all tags
+build-tags:
+	git tag | xargs -I{} sh -c "git checkout {}; pandoc {{SLIDE_OPTIONS}} slides.md -o docs/index.html; sed -i 's|reveal.js@^4//|reveal.js@^5/|g' docs/index.html; mkdir -p docs/{}; mv docs/index.html docs/{}/index.html; ln -sf ../images docs/{}/images; ln -sf ../custom.css docs/{}/custom.css"
+	git checkout main && just html

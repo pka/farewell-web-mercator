@@ -2,10 +2,6 @@ name: github pages
 
 on:
   push:
-    branches:
-      - main
-      - german
-  pull_request:
 
 permissions:
   contents: write
@@ -14,7 +10,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Install just
         uses: taiki-e/install-action@v2
@@ -30,11 +28,10 @@ jobs:
           pandoc --version
 
       - name: Build
-        run: just html
+        run: just build-tags
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/german'
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
