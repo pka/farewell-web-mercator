@@ -1,31 +1,12 @@
-% Interactive web mapping with Equal Earth projection
-% Pirmin Kalberer @implgeo
-% FOSS4G 2026 Hiroshima
+% Equal Earth Maps Using Cloud-Optimized Formats
+% Pirmin Kalberer </br><pka@sourcepole.ch>
+% CNG Zürich 2026
 ---
 width: 1600
 height: 900
 ---
 
-# About me
-
-Co-founder & developer @ Sourcepole, Switzerland
-
-Web GIS, QGIS and other OSGeo projects
-
-t-rex tile server -> BBOX server
-
-::: notes
-OSM:
-. . .
-Lazy mapper (55 changesets in 15 years)
-. . .
-FOSSGIS e.V. board (German OSM chapter)
-. . .
-:::
-
 # The current state of Web Mapping
-
-. . .
 
 * Web Mercator projection
 * Sometimes a globe
@@ -35,54 +16,20 @@ FOSSGIS e.V. board (German OSM chapter)
 
 # Web Mercator - the bad parts
 
-## Size distortion
-
 ![](images/mercator-size-distortion-animated.gif)
 
 Africa actually has 14 times as much area as Greenland
 
 ::: notes
-Image credit: https://en.wikipedia.org/wiki/Mercator_projection
-:::
-
-## Thematic mapping
-
-![](images/webmercator-osm-membership.png)
-
-## In the wild
-
-![](images/webmercator-skynews.jpg)
-
-::: notes
-On T-shirts, posters and even in school rooms
-Image credit: https://mapstodon.space/@luis_de_sousa@mastodon.social/113540237357844184
-:::
-
-# Mercator projection
-
-![](images/mercator-portrait.jpg)
-
 * Gerardus Mercator, 1569
 * Conformal cylindrical map projection
 * Good for navigation
-
-::: notes
 * north everywhere "up" and south "down", while preserving local directions and shapes
-* 1512 (Flanders) - 1594 (Duisburg)
-<https://en.wikipedia.org/wiki/Gerardus_Mercator>
-:::
-
-## Web Mercator
-
-* Mercator projection cropped to ~85°N to 85°S
-  -> square, good for tiling
-* Spherical and ellipsoidal mix of formulas
-
-::: notes
-The value 85.051129° is the latitude at which the full projected map becomes a square
 :::
 
 # Equal Earth map projection
+
+![](images/Equal-Earth-Map-11E.jpg)
 
 Bojan Šavrič, Tom Patterson, Bernhard Jenny, 2018
 
@@ -92,125 +39,81 @@ Bojan Šavrič, Tom Patterson, Bernhard Jenny, 2018
 Inspired by the Robinson projection, retains the relative size of areas.
 :::
 
-## Equal Earth Greenwich
+# Cloud-optimized formats
 
-![](images/Equal-Earth-Map-0.jpg)
+* Raster
+  * Cloud Optimized GeoTIFF
+  * GeoZarr
+* Vector
+  * GeoParquet
+  * FlatGeobuf
+* Containers
+  * PMTiles
+  * SOZip
+* Point clouds
+  * COPC
 
-EPSG:8857
+## PMTiles (Raster)
 
-## Equal Earth Americas
+![](images/ol-pmtiles.jpg)
 
-![](images/Equal-Earth-Map-90W.jpg)
+<https://equal.bbox.earth/pmtiles/>
 
-EPSG:8858
+## FlatGeobuf
 
-## Equal Earth Asia-Pacific
+![](images/ol-fgb.jpg)
 
-![](images/Equal-Earth-Map-150E.jpg)
+<https://equal.bbox.earth/fgb/>
 
-EPSG:8859
+Dynamic center meridian:
 
-## Equal Earth Florence
+<https://openlayers.org/en/latest/examples/equal-earth-geojson.html>
 
-![](images/Equal-Earth-Map-11E.jpg)
+## GeoParquet
 
-Florence Meridian 11E
+![](images/ol-parquet.jpg)
+
+<https://equal.bbox.earth/geoparquet/>
+
+::: notes
+- OvertureMaps POIs
+- Cloud Optimized GeoParquet (COGP)
+- https://github.com/Kanahiro/cloud-optimized-geoparquet
+:::
+
+## GeoZarr
+
+![](images/ol-geozarr.jpg)
+
+[Demo](http://localhost:5173/geozarr)
 
 # Behaviour for interactive maps
 
-Two proposals
+Proposals:
 
-## Dynamic center meridian
+* Dynamic center meridian
+* Transition to Mercator for higher zoom levels
 
-![](images/equal-earth-rotation.gif)
+## A New Interactive Equal-Area Map
 
-[Interactive example (OpenLayers)](https://openlayers.org/en/latest/examples/equal-earth-geojson.html)
+![](images/new-equal-area.jpg)
 
-::: notes
+Equal-area projection with transition to Mercator
 
-Reproject WGS-84-Tiles?
+<https://www.benjoffe.com/map>
 
-<https://observablehq.com/d/ece4d307c72c1312>
-:::
+# Takeaways
 
-## Use Mercator for higher zoom levels
-
-![](images/Equal-Earth-Maplibre.jpg)
-![](images/NE-combined-Merc.jpg)
-
-* World view: Equal earth
-* Regional view: Mercator
-
-::: notes
-<https://equal.bbox.earth/maplibre-eq2merc/>
-:::
-
-## Challenges: Antimeridian problems
-
-![](images/antimerdian-qgis.png)
-
-Solutions:
-
-* Prepare data (split at potential antimeridians)
-* Improve rendering algorithms
-
-## Smooth transition Equal Earth -> Mercator
-
-![](images/proj-transition.gif)
-
-Example: MapLibre globe
-
-::: notes
-<https://kvaleya.gitlab.io/maplibre/globe/globedemo.html>
-:::
-
-# Software support
-
-## Projection
-
-* PROJ -> GDAL, QGIS, R
-* proj4js
-* D3
-
-## OpenLayers
-
-* Projection support for raster and vector data
-* Reprojection of vector tiles
-* Support for non-Mercator grids
-
-::: notes
-Dynamic projection demo: https://ahocevar.net/fossgis-2026/14
-:::
-
-## MapLibre
-
-* Single tile grid
-* Globe view reprojected from Mercator tiles
-* In development: Equal earth view reprojected from Mercator tiles!
-
-::: notes
-![](images/Equal-Earth-Maplibre.jpg)
-
-<https://equal.bbox.earth/maplibre/>
-:::
-
-## Ways to support Equal Earth
-
-* Use data in Equal Earth projection
-  * Which tile grids?
-  * PoC SotM EU 2024: Equal Earth projected data in Mercator grid
-* Reproject data from WGS84 (or Mercator?)
-
-## How can you help?
-
-* Sponsor development
-* Call out bad maps and spread the word
-* Use Equal Earth for world maps
+* Equal Earth is here - use it!
+* Basic support for cloud-native formats 
+* Web mapping libraries need support for antimeridians != 180°
 
 # Thank you
 
 Pirmin Kalberer
 
+<pka@sourcepole.ch>
+
 [mapstodon.space/@implgeo](https://mapstodon.space/@implgeo)
 
-<pka@sourcepole.com>
+![](images/qrcode-cng26.png)
