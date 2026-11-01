@@ -85,7 +85,7 @@ Dynamic center meridian:
 
 ![](images/ol-geozarr.jpg)
 
-[Demo](https://sites-equal-earth-cloud-native-rw3y3z.b-cdn.net/geozarr.html)
+<https://equal.bbox.earth/geozarr/>
 
 # Behaviour for interactive maps
 
